@@ -1,0 +1,14 @@
+name: custom-action
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: franclarke/DocumentatorAction@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.OPENAI_API_KEY }}
